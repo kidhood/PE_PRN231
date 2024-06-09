@@ -1,0 +1,82 @@
+﻿@page
+@model PEPRN231_SU24TrialTest_StudentCode_FE.Pages.WaterPainting.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h2>
+    <a asp-page="Create">Create New</a>
+</h2>
+<form method="post" class="d-flex mt-2">
+    <input asp-for="@Model.SearchByName" placeholder="Input Name" class="form-control me-2" />
+    <input type="hidden" value="1" asp-for="@Model.SearchMode" />
+    <button type="submit" >Search</button>
+</form>
+
+<form method="post" class="d-flex mt-2">
+    <input asp-for="@Model.SearchByNum" placeholder="Input year" type="number" class="form-control me-2" />
+    <input type="hidden" value="2" asp-for="@Model.SearchMode" />
+    <button type="submit">Search</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WatercolorsPainting[0].PaintingName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatercolorsPainting[0].PaintingDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatercolorsPainting[0].PaintingAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatercolorsPainting[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatercolorsPainting[0].PublishYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatercolorsPainting[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WatercolorsPainting[0].Style)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.WatercolorsPainting) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaintingName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaintingDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaintingAuthor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Style.StyleName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PaintingId">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PaintingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

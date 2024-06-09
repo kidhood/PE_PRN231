@@ -1,0 +1,45 @@
+﻿@page
+@model PEPRN231_SU24TrialTest_StudentCode_FE.Pages.LoginModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>@ViewData["Title"] - Eyeglasses_NguyenVanThong</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Eyeglasses_NguyenVanThong.styles.css" asp-append-version="true" />
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0">Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" asp-for="@Model.UserEmail" class="form-control" id="username" placeholder="Enter your username" required>
+                            </div>
+                            <div class="form-group mb-2">
+                                <label for="password">Password</label>
+                                <input type="password" asp-for="@Model.Password" class="form-control" id="password" placeholder="Enter your password" required>
+                            </div>
+                            <span class = "text-danger">@Model.MessageError</span>
+                           <div>
+                                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                           </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
