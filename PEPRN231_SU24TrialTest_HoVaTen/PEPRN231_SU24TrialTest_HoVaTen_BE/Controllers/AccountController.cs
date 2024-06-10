@@ -21,6 +21,7 @@ namespace PEPRN231_SU24TrialTest_HoVaTen_BE.Controllers
             this.userAccountRepository = userAccountRepository;
             _config = config;
         }
+
         [HttpPost("Login")]
         public IActionResult Login([FromBody] LoginRequest request) 
         {

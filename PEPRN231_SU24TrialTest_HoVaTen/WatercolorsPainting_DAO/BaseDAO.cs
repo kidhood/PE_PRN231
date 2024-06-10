@@ -47,32 +47,9 @@ namespace WatercolorsPainting_DAO
         }
 
 
-        public IQueryable<T> Get(
-        Expression<Func<T, bool>>? predicate = null,
-        Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
-        List<Expression<Func<T, object>>>? includes = null,
-        bool disableTracking = false)
+        public IQueryable<T> Get()
         {
-            IQueryable<T> query = this._dbSet;
-
-            if (disableTracking)
-            {
-                query = query.AsNoTracking();
-            }
-
-            if (includes != null)
-            {
-                query = includes.Aggregate(query, (current, include) => current.Include(include));
-            }
-
-            if (predicate != null)
-            {
-                query = query.Where(predicate);
-            }
-
-            return orderBy != null
-                ? orderBy(query).AsQueryable()
-                : query.AsQueryable();
+            return this._dbSet.AsQueryable();
         }
 
     }

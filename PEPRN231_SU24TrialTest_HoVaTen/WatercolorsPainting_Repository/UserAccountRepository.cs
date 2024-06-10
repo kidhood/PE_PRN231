@@ -20,7 +20,7 @@ namespace WatercolorsPainting_Repository
 
         public UserAccount CheckLogin(string email, string password)
         {
-            return this._dao.Get(a => a.UserEmail == email && a.UserPassword == password).FirstOrDefault();   
+            return this._dao.Get().Where(x => x.UserEmail == email && x.UserPassword == password).FirstOrDefault(); 
         }
     }
 }

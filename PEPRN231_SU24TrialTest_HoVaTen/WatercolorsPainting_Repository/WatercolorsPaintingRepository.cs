@@ -24,12 +24,9 @@ namespace WatercolorsPainting_Repository
             this._dao.Create(watercolorsPainting);
         }
 
-        public IQueryable<WatercolorsPainting> GetAll(Expression<Func<WatercolorsPainting, bool>>? predicate = null,
-        Func<IQueryable<WatercolorsPainting>, IOrderedQueryable<WatercolorsPainting>>? orderBy = null,
-        List<Expression<Func<WatercolorsPainting, object>>>? includes = null,
-        bool disableTracking = false)
+        public IQueryable<WatercolorsPainting> GetAll()
         {
-            return this._dao.Get(predicate, orderBy, includes, disableTracking);
+            return this._dao.Get();
         }
 
         public void UpdateWater(WatercolorsPainting watercolorsPainting)

@@ -11,10 +11,7 @@ namespace WatercolorsPainting_Repository.Interface
     public interface IWatercolorsPaintingRepository
     {
         void CreateWater(WatercolorsPainting watercolorsPainting);
-        IQueryable<WatercolorsPainting> GetAll(Expression<Func<WatercolorsPainting, bool>>? predicate = null,
-        Func<IQueryable<WatercolorsPainting>, IOrderedQueryable<WatercolorsPainting>>? orderBy = null,
-        List<Expression<Func<WatercolorsPainting, object>>>? includes = null,
-        bool disableTracking = false);
+        IQueryable<WatercolorsPainting> GetAll();
         void UpdateWater(WatercolorsPainting watercolorsPainting);
     }
 }
