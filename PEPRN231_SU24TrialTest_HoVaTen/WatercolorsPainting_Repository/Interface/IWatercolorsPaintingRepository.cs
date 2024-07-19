@@ -13,5 +13,6 @@ namespace WatercolorsPainting_Repository.Interface
         void CreateWater(WatercolorsPainting watercolorsPainting);
         IQueryable<WatercolorsPainting> GetAll();
         void UpdateWater(WatercolorsPainting watercolorsPainting);
+        void DeleteWater(WatercolorsPainting water);
     }
 }

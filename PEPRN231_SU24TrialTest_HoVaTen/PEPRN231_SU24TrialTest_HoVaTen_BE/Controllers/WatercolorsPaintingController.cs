@@ -51,5 +51,20 @@ namespace PEPRN231_SU24TrialTest_HoVaTen_BE.Controllers
 
             return BadRequest("Update fail");
         }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "3")]
+        public IActionResult Delete(string id)
+        {
+            var watercolorsPainting = new WatercolorsPainting();
+            watercolorsPainting.PaintingId = id;
+            if (watercolorsPainting != null)
+            {
+                this.watercolorsPaintingRepository.DeleteWater(watercolorsPainting);
+                return Ok("Delete successfull");
+            }
+
+            return BadRequest("Delete fail");
+        }
     }
 }

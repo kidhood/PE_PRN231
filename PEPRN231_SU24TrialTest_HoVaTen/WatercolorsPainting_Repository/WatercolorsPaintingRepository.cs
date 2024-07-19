@@ -33,5 +33,10 @@ namespace WatercolorsPainting_Repository
         {
            this._dao.Update(watercolorsPainting);
         }
+
+        public void DeleteWater(WatercolorsPainting water)
+        {
+            this._dao.Remove(water);
+        }
     }
 }

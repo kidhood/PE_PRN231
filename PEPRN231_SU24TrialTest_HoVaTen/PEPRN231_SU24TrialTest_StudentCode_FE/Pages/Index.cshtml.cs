@@ -14,7 +14,7 @@ namespace PEPRN231_SU24TrialTest_StudentCode_FE.Pages
 
         public IActionResult OnGet()
         {
-            return RedirectToPage("/Login");
+            return RedirectToPage("/WaterPainting/Index");
         }
     }
 }
